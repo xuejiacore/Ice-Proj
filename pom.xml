@@ -10,6 +10,23 @@
     <name>ice-proj</name>
     <packaging>pom</packaging>
 
+
+    <profiles>
+        <profile>
+            <id>jdk-1.8</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <jdk>1.8</jdk>
+            </activation>
+            <properties>
+                <maven.compiler.source>1.8</maven.compiler.source>
+                <maven.compiler.target>1.8</maven.compiler.target>
+                <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+            </properties>
+        </profile>
+    </profiles>
+
+
     <properties>
         <project.version>1.0.0-SNAPSHOT</project.version>
         <ice.version>3.6.3</ice.version>

@@ -18,7 +18,7 @@ public class Service {
 
 
             Ice.Object helloObj = new HelloService();
-            adapter.add(helloObj, ic.stringToIdentity("Hello"));
+            adapter.add(helloObj, ic.stringToIdentity("hello"));
             System.out.println("---------服务启动---------");
             adapter.activate();
             ic.waitForShutdown();

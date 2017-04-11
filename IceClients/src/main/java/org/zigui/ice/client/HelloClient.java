@@ -15,7 +15,7 @@ public class HelloClient {
         Ice.Communicator ic = null;
         try {
             ic = Ice.Util.initialize(args);
-            Ice.ObjectPrx base = ic.stringToProxy("Hello:default -p 10000");
+            Ice.ObjectPrx base = ic.stringToProxy("hello:default -p 10000");
             IHelloPrx helloPrx = IHelloPrxHelper.checkedCast(base);
 
             if (helloPrx == null)

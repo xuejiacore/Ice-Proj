@@ -1,0 +1,3 @@
+IceBox.ServiceManager.EndPoints=tcp -p 9999
+hello.Endpoints=tcp -p 10000
+IceBox.Service.hello=org.zigui.ice.service.impl.HelloBoxService --Ice.Trace.Network=1 arg1 arg2

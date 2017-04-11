@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="IceServices:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/IceServices_jar</output-path>
+    <root id="archive" name="IceServices.jar">
+      <element id="module-output" name="IceServices" />
+      <element id="module-output" name="IFace" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/zeroc/icebox/3.6.3/icebox-3.6.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/zeroc/ice/3.6.3/ice-3.6.3.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

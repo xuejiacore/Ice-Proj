@@ -12,10 +12,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Ice-Proj" target="1.5" />
-      <module name="IceClients" target="1.5" />
-      <module name="IceServices" target="1.5" />
-      <module name="IFace" target="1.5" />
+      <module name="Ice-Proj" target="1.8" />
+      <module name="IceClients" target="1.8" />
+      <module name="IceServices" target="1.8" />
+      <module name="IFace" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,0 +1,3 @@
+# IceBox的启动方式
+
+java -classpath ./IceServices.jar --Ice.Config=hello.icebox
