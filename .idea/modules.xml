@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/IFace/IFace.iml" filepath="$PROJECT_DIR$/IFace/IFace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Ice-Proj.iml" filepath="$PROJECT_DIR$/.idea/Ice-Proj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IceClients/IceClients.iml" filepath="$PROJECT_DIR$/IceClients/IceClients.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IceServices/IceServices.iml" filepath="$PROJECT_DIR$/IceServices/IceServices.iml" />
+    </modules>
+  </component>
+</project>
