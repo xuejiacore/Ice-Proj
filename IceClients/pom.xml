@@ -27,6 +27,11 @@
             <artifactId>icebox</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+
         <!-- RPC接口 -->
         <dependency>
             <groupId>org.zigui.ice.iface</groupId>

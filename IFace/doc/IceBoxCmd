@@ -1,3 +1,11 @@
 # IceBox的启动方式
 
-java -classpath ./IceServices.jar --Ice.Config=hello.icebox
+# 由于IBox的配置作为jar中的源，因此，在运行配置的时候可以直接指明包中的相对路径
+# 同样的，icebox的启动配置文件可以作为外部配置文件来进行加载，同样有效
+java -classpath ./IceServices.jar IceBox.Server --Ice.Config=config/hello.icebox
+
+# 建议可以将编译打包完成的jar文件直接放到java 的classpath中，然后可以通过执行命令 "java IceBox.Server --Ice.Config=foo.icebox" 来启动一个服务
+
+
+
+# 应该有提供接口在代码中加载icebox的启动配置文件来启动一个服务

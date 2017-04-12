@@ -1,0 +1,69 @@
+IceBox.Server的加载程序
+
+
+// 在Server的主程序中，还是优先准备了初始化的配置
+Ice.InitializationData initData = new Ice.InitializationData();
+initData.properties = Ice.Util.createProperties();
+initData.properties.setProperty("Ice.Admin.DelayCreation", "1");
+
+// 创建一个IceBox.Server实例并使用初始化配置参数进行初始化后运行main函数
+server.main("appName", args, initData);
+
+// 由于Server extends Ice.Application的继承关系，可以看到Server的运行主方法main正是来源于Application的
+
+/**
+ * 在 Ice.Application.main方法中：
+ *
+ * 对Ice.Config启动配置文件进行读取的类是：Ice.StringSeqHolder（仅仅是一个参数对象化）
+ *
+ * 在Ice.Util.createProperties(Ice.StringSeqHolder, Ice.Properties)中进行了读取了配置文件中的参数，更多的内部细节不再赘述
+ * 以下看参数配置读取的核心代码：
+
+------------------------------------------------------------------------------------------------
+ for(int i = 0; i < args.value.length; i++)
+ {
+     if(args.value[i].startsWith("--Ice.Config"))
+     {
+         String line = args.value[i];
+         if(line.indexOf('=') == -1)
+         {
+             line += "=1";
+         }
+         parseLine(line.substring(2)); // 实现了一个类似properties读取的算法获取键值对，最后调用setProperty(key, value)，最终被设置到_properties内部变量中
+         loadConfigFiles = true;
+
+         String[] arr = new String[args.value.length - 1];
+         System.arraycopy(args.value, 0, arr, 0, i);
+         if(i < args.value.length - 1)
+         {
+             System.arraycopy(args.value, i + 1, arr, i, args.value.length - i - 1);
+         }
+         args.value = arr;
+     }
+ }
+------------------------------------------------------------------------------------------------
+ * 配置完成之后将会对Ice.InitializationData实例初始化完毕，这个再作为Ice.Application.doMain的参数进行进一步初始化处理
+ * 查看一下doMain函数最主要的任务：
+ * _communicator = Util.initialize(argHolder, initData);  // 使用初始化参数对Ice.Application._communicator实例进行初始化
+ * 初始化完成之后，执行   status = run(argHolder.value);  // 启动线程运行服务，该方法在Application对象中是一个抽象方法，需要由子类也就是IceBox.Server类进行实现
+ * 回到IceBox.Server中的run方法：
+ * 这个阶段已经获得了所有的服务运行参数，以及初始化了Communicator实例，还是继续参数处理，处理完成后：
+ *
+
+------------------------------------------------------------------------------------------------
+// 使用服务管理器进行管理
+ServiceManagerI serviceManagerImpl = new ServiceManagerI(communicator(), args);
+// 运行服务管理器
+return serviceManagerImpl.run();
+------------------------------------------------------------------------------------------------
+
+ * ServiceManagerI的任务是真正读取各类的配置参数
+ * 在run方法中：********
+ *
+ * 检查配置文件中属性配置的合法性，同时获得
+ * Ice.ObjectAdapter 实例，继续装饰Communicator类，最后使用：
+ * adapter.activate()来提供服务
+ * communicator.waitForShutdown来处理shutdown
+
+以上就是使用IceBox.Server来读取配置文件并且进行初始化并提供服务的核心程序代码
+其余未提到的部分主要是一些监控、异常处理等内容

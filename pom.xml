@@ -32,6 +32,7 @@
         <ice.version>3.6.3</ice.version>
         <icebox.version>3.6.3</icebox.version>
         <iface.version>1.0-SNAPSHOT</iface.version>
+        <junit.version>4.12</junit.version>
     </properties>
 
     <modules>
@@ -53,6 +54,12 @@
                 <groupId>com.zeroc</groupId>
                 <artifactId>icebox</artifactId>
                 <version>${icebox.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/junit/junit -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
