@@ -3,6 +3,7 @@ package org.zigui.ice.service;
 import Ice.Identity;
 import Ice.Object;
 import org.zigui.ice.service.example.ParameterServiceImpl;
+import org.zigui.ice.service.impl.ComplexServiceImpl;
 import org.zigui.ice.service.impl.HelloServiceImpl;
 
 /**
@@ -15,12 +16,13 @@ public class Service {
     private static class ServiceClass {
         public static Class<?> helloService = HelloServiceImpl.class;
         public static Class<?> parameterService = ParameterServiceImpl.class;
+        public static Class<?> complexService = ComplexServiceImpl.class;
     }
 
     public static void main(String[] args) {
 
         // 设置需要提供的服务
-        Class<?>[] servicesArray = new Class[]{ServiceClass.helloService, ServiceClass.parameterService};
+        Class<?>[] servicesArray = new Class[]{ServiceClass.helloService, ServiceClass.parameterService, ServiceClass.complexService};
 
         int status = 0;
         Ice.Communicator ic = null;
