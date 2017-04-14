@@ -70,9 +70,9 @@ public abstract class _IComplexInterfaceDisp extends Ice.ObjectImpl implements I
         return __ids[1];
     }
 
-    public final Person visit(Person person)
+    public final Person visit(Person person, Ice.BooleanOptional ageIncr)
     {
-        return visit(person, null);
+        return visit(person, ageIncr, null);
     }
 
     public static Ice.DispatchStatus ___visit(IComplexInterface __obj, IceInternal.Incoming __inS, Ice.Current __current)
@@ -80,9 +80,11 @@ public abstract class _IComplexInterfaceDisp extends Ice.ObjectImpl implements I
         __checkMode(Ice.OperationMode.Normal, __current.mode);
         IceInternal.BasicStream __is = __inS.startReadParams();
         Person person = null;
+        Ice.BooleanOptional ageIncr = new Ice.BooleanOptional();
         person = Person.__read(__is, person);
+        __is.readBool(1, ageIncr);
         __inS.endReadParams();
-        Person __ret = __obj.visit(person, __current);
+        Person __ret = __obj.visit(person, ageIncr, __current);
         IceInternal.BasicStream __os = __inS.__startWriteParams(Ice.FormatType.DefaultFormat);
         Person.__write(__os, __ret);
         __inS.__endWriteParams(true);

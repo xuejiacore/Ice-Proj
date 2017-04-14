@@ -1,5 +1,6 @@
 package org.zigui.ice.service.impl;
 
+import Ice.BooleanOptional;
 import Ice.Current;
 import org.zigui.ice.face.hello.Color;
 import org.zigui.ice.face.hello.Person;
@@ -11,7 +12,7 @@ import org.zigui.ice.face.hello._IComplexInterfaceDisp;
 public class ComplexServiceImpl extends _IComplexInterfaceDisp {
 
     @Override
-    public Person visit(Person person, Current __current) {
+    public Person visit(Person person, BooleanOptional ageIncr, Current __current) {
         System.err.println("当前Person:name => " + person.name + " age => " + person.age);
         if (person.age > 10 && person.age <= 30) {
             person.color = Color.Blue;
@@ -19,6 +20,10 @@ public class ComplexServiceImpl extends _IComplexInterfaceDisp {
             person.color = Color.Yellow;
         } else {
             person.color = Color.Red;
+        }
+
+        if (ageIncr.get()) {
+            person.age++;
         }
         return person;
     }

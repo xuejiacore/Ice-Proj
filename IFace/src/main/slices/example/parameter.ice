@@ -12,7 +12,7 @@ module example {
         bool reg(string name, int age);
 
         /**
-         * 使用带输出参数的形式
+         * 使用带输出参数的形式，其中，输入参数的位置必须要在输出参数之前
          */
         void unReg(string name, out int count, out bool successful);
     };

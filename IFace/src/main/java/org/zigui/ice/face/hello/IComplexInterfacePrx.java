@@ -22,41 +22,85 @@ package org.zigui.ice.face.hello;
 
 public interface IComplexInterfacePrx extends Ice.ObjectPrx
 {
-    public Person visit(Person person);
+    public Person visit(Person person, Ice.BooleanOptional ageIncr);
 
-    public Person visit(Person person, java.util.Map<String, String> __ctx);
+    public Person visit(Person person, Ice.BooleanOptional ageIncr, java.util.Map<String, String> __ctx);
 
-    public Ice.AsyncResult begin_visit(Person person);
+    public Person visit(Person person, boolean ageIncr);
 
-    public Ice.AsyncResult begin_visit(Person person, java.util.Map<String, String> __ctx);
+    public Person visit(Person person, boolean ageIncr, java.util.Map<String, String> __ctx);
 
-    public Ice.AsyncResult begin_visit(Person person, Ice.Callback __cb);
+    public Ice.AsyncResult begin_visit(Person person, Ice.BooleanOptional ageIncr);
 
-    public Ice.AsyncResult begin_visit(Person person, java.util.Map<String, String> __ctx, Ice.Callback __cb);
+    public Ice.AsyncResult begin_visit(Person person, Ice.BooleanOptional ageIncr, java.util.Map<String, String> __ctx);
 
-    public Ice.AsyncResult begin_visit(Person person, Callback_IComplexInterface_visit __cb);
+    public Ice.AsyncResult begin_visit(Person person, Ice.BooleanOptional ageIncr, Ice.Callback __cb);
 
-    public Ice.AsyncResult begin_visit(Person person, java.util.Map<String, String> __ctx, Callback_IComplexInterface_visit __cb);
+    public Ice.AsyncResult begin_visit(Person person, Ice.BooleanOptional ageIncr, java.util.Map<String, String> __ctx, Ice.Callback __cb);
+
+    public Ice.AsyncResult begin_visit(Person person, Ice.BooleanOptional ageIncr, Callback_IComplexInterface_visit __cb);
+
+    public Ice.AsyncResult begin_visit(Person person, Ice.BooleanOptional ageIncr, java.util.Map<String, String> __ctx, Callback_IComplexInterface_visit __cb);
 
     public Ice.AsyncResult begin_visit(Person person, 
+                                       Ice.BooleanOptional ageIncr, 
                                        IceInternal.Functional_GenericCallback1<Person> __responseCb, 
                                        IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
 
     public Ice.AsyncResult begin_visit(Person person, 
+                                       Ice.BooleanOptional ageIncr, 
                                        IceInternal.Functional_GenericCallback1<Person> __responseCb, 
                                        IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
                                        IceInternal.Functional_BoolCallback __sentCb);
 
     public Ice.AsyncResult begin_visit(Person person, 
+                                       Ice.BooleanOptional ageIncr, 
                                        java.util.Map<String, String> __ctx, 
                                        IceInternal.Functional_GenericCallback1<Person> __responseCb, 
                                        IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
 
     public Ice.AsyncResult begin_visit(Person person, 
+                                       Ice.BooleanOptional ageIncr, 
                                        java.util.Map<String, String> __ctx, 
                                        IceInternal.Functional_GenericCallback1<Person> __responseCb, 
                                        IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
                                        IceInternal.Functional_BoolCallback __sentCb);
 
     public Person end_visit(Ice.AsyncResult __result);
+
+    public Ice.AsyncResult begin_visit(Person person, boolean ageIncr);
+
+    public Ice.AsyncResult begin_visit(Person person, boolean ageIncr, java.util.Map<String, String> __ctx);
+
+    public Ice.AsyncResult begin_visit(Person person, boolean ageIncr, Ice.Callback __cb);
+
+    public Ice.AsyncResult begin_visit(Person person, boolean ageIncr, java.util.Map<String, String> __ctx, Ice.Callback __cb);
+
+    public Ice.AsyncResult begin_visit(Person person, 
+                                       boolean ageIncr, 
+                                       IceInternal.Functional_GenericCallback1<Person> __responseCb, 
+                                       IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+
+    public Ice.AsyncResult begin_visit(Person person, 
+                                       boolean ageIncr, 
+                                       IceInternal.Functional_GenericCallback1<Person> __responseCb, 
+                                       IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                       IceInternal.Functional_BoolCallback __sentCb);
+
+    public Ice.AsyncResult begin_visit(Person person, 
+                                       boolean ageIncr, 
+                                       java.util.Map<String, String> __ctx, 
+                                       IceInternal.Functional_GenericCallback1<Person> __responseCb, 
+                                       IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+
+    public Ice.AsyncResult begin_visit(Person person, 
+                                       boolean ageIncr, 
+                                       java.util.Map<String, String> __ctx, 
+                                       IceInternal.Functional_GenericCallback1<Person> __responseCb, 
+                                       IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                       IceInternal.Functional_BoolCallback __sentCb);
+
+    public Ice.AsyncResult begin_visit(Person person, boolean ageIncr, Callback_IComplexInterface_visit __cb);
+
+    public Ice.AsyncResult begin_visit(Person person, boolean ageIncr, java.util.Map<String, String> __ctx, Callback_IComplexInterface_visit __cb);
 }

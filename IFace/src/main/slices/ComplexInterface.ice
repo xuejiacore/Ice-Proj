@@ -17,6 +17,6 @@ module hello {
         /**
          *
          */
-         Person visit(Person person);
+         Person visit(Person person, optional(1) bool ageIncr);
     };
 };

@@ -34,14 +34,16 @@ public class ComplexServiceTest extends BasicServiceTest {
         person23.name = "John";
         person23.age = 23;
 
-        Person visit23Person = this.complexInterfacePrx.visit(person23);
+        Person visit23Person = this.complexInterfacePrx.visit(person23, true);
         Assert.assertEquals(Color.Blue, visit23Person.color);
+        Assert.assertEquals(24, visit23Person.age);
 
         Person person45 = new Person();
         person45.name = "Chim";
         person45.age = 45;
-        Person visit45Person = this.complexInterfacePrx.visit(person45);
+        Person visit45Person = this.complexInterfacePrx.visit(person45, false);
         Assert.assertEquals(Color.Yellow, visit45Person.color);
+        Assert.assertEquals(45, visit45Person.age);
     }
 
     @Override

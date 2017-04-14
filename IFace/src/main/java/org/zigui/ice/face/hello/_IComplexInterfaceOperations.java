@@ -22,5 +22,5 @@ package org.zigui.ice.face.hello;
 
 public interface _IComplexInterfaceOperations
 {
-    Person visit(Person person, Ice.Current __current);
+    Person visit(Person person, Ice.BooleanOptional ageIncr, Ice.Current __current);
 }
